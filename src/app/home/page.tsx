@@ -2,11 +2,12 @@
 import Sidebar from "@/components/Sidebar"
 import GreetingBanner from "@/components/GreetingBanner"
 import WeatherCard from "@/components/WeatherCard"
-import TodoList from "@/components/TodoList"
 import QuickLinks from "@/components/QuickLinks"
 import NewsFeed from "@/components/NewsFeed"
 import Footer from "@/components/Footer"
 import Clock from "@/components/Clock"
+import Calendar from "@/components/Calendar"
+import Analytics from "@/components/Analytics"
 
 const Home = () => {
   return (
@@ -25,7 +26,8 @@ const Home = () => {
           {/* Left Column */}
           <div className="space-y-6">
             <WeatherCard />
-            <TodoList />
+            <Calendar />
+            <Analytics />
             <QuickLinks />
           </div>
           
@@ -34,8 +36,8 @@ const Home = () => {
             <Clock />
             <NewsFeed />
             <div className="bg-white p-6 rounded-xl shadow">
-              <h3 className="font-semibold text-lg mb-4">Recent Activity</h3>
-              <p className="text-gray-600">Your activity will appear here</p>
+              <h3 className="font-semibold text-lg mb-4 text-gray-800">Recent Activity</h3>
+              <p className="text-gray-800">Your activity will appear here</p>
             </div>
           </div>
         </div>

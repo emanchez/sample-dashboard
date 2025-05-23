@@ -17,8 +17,8 @@ const Sidebar = () => {
                     href="/" 
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700 transition"
                     >
-                    <span>🏠</span>
-                    <span>Dashboard</span>
+                    <span>ℹ️</span>
+                    <span>About</span>
                 </Link>
                 <Link 
                     href="/projects" 

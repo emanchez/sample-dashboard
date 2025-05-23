@@ -113,7 +113,7 @@ const WeatherCard = () => {
           )}
           
           <div>
-            <p className="text-2xl font-bold">{weather.temperature}°F</p>
+            <p className="text-2xl font-bold text-gray-800">{weather.temperature}°F</p>
             <p className="text-gray-600 capitalize">{weather.condition}</p>
             
           </div>
