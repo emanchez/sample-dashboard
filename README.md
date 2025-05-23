@@ -1,3 +1,15 @@
+This project is a generic dashboard full of widgets for a dev with functioning API calls to gather local weather data (it's hardcoded for now since location request function does not appear to be working with my implementation) from google's weather API and top trending news via google news 3rd party api SerpApi. The article image defaults to a placeholder because we do not always have permission to retrieve the image data, and sometimes it completely crashes the site depending on what src data is returned. The app has other generic widgets for show only
+
+/home desktop view
+![Screenshot from 2025-05-22 21-45-10](https://github.com/user-attachments/assets/7418c0ef-c963-4907-a26a-a9e281ce5cf6)
+
+/home mobile view
+![Screenshot from 2025-05-22 21-48-36](https://github.com/user-attachments/assets/ca855fac-3a28-41b6-a599-7f2f48d2204f)
+![Screenshot from 2025-05-22 21-48-46](https://github.com/user-attachments/assets/7a38e224-81d5-49e4-90f2-1949d7459978)
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
