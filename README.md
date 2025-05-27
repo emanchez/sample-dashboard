@@ -7,6 +7,8 @@ This project is a generic dashboard full of widgets for a dev with functioning A
 ![Screenshot from 2025-05-22 21-48-36](https://github.com/user-attachments/assets/ca855fac-3a28-41b6-a599-7f2f48d2204f)
 ![Screenshot from 2025-05-22 21-48-46](https://github.com/user-attachments/assets/7a38e224-81d5-49e4-90f2-1949d7459978)
 
+video demo
+[Screencast from 2025-05-27 14-10-13.webm](https://github.com/user-attachments/assets/97dbec6e-bc36-43fd-8364-1dff3dbc151f)
 
 
 
