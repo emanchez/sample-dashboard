@@ -1,17 +1,45 @@
 @import "tailwindcss";
 
+/**
+ * CSS Custom Properties and Global Styles
+ * 
+ * This file contains global CSS variables, custom font definitions,
+ * and utility classes for the Sample Dashboard application.
+ */
+
+/* CSS Custom Properties for consistent theming */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Color palette */
+  --primary: #3B82F6;
+  --secondary: #10B981;
+  --accent: #F59E0B;
+  --error: #EF4444;
+  --warning: #F59E0B;
+  --success: #10B981;
+  
+  /* Spacing and layout */
+  --sidebar-width: 16rem;
+  --border-radius: 0.75rem;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Theme configuration using CSS variables */
+.theme-base {
+  color: var(--color-foreground);
+  background-color: var(--color-background);
+  font-family: var(--font-geist-sans);
 }
 
+/* Dark mode support */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,17 +47,106 @@
   }
 }
 
+/* Custom font face for digital clock */
 @font-face {
   font-family: 'Digital';
-  src: url('/fonts/digital-7-mono.ttf') format('woff2');
-}
-.font-digital {
-  font-family: 'Digital', 'Courier New', monospace;
-  font-weight: bolder;
+  src: url('/fonts/digital-7-mono.ttf') format('truetype');
+  font-display: swap; /* Optimize font loading */
+  font-weight: normal;
 }
 
+/* Digital font utility class */
+.font-digital {
+  font-family: 'Digital', 'Courier New', monospace;
+  font-weight: bold;
+  font-feature-settings: 'tnum' 1; /* Tabular numbers */
+}
+
+/* Custom animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Animation utility classes */
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Widget container utilities */
+.widget-container {
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.widget-container:hover {
+  transform: translateY(-2px);
+}
+
+/* Loading skeleton utilities */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Focus styles for better accessibility */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5), 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Global body styles */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans, Arial, Helvetica, sans-serif);
+  line-height: 1.6;
 }

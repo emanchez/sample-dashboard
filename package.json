@@ -1,12 +1,42 @@
 {
-  "name": "sample",
-  "version": "0.1.0",
+  "name": "mydashboard",
+  "version": "1.0.0",
+  "description": "Personal productivity dashboard with weather, news, and productivity widgets",
+  "author": "Dashboard Team",
+  "license": "MIT",
+  "keywords": [
+    "dashboard",
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "weather",
+    "news",
+    "productivity"
+  ],
+  "homepage": "https://github.com/yourusername/mydashboard",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/mydashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/mydashboard/issues"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "analyze": "cross-env ANALYZE=true next build",
+    "clean": "rm -rf .next out dist",
+    "preview": "npm run build && npm run start",
+    "pre-commit": "npm run lint && npm run type-check",
+    "test": "echo \"No tests specified\" && exit 0",
+    "postinstall": "echo \"✅ Installation complete! Run 'npm run dev' to start developing.\""
   },
   "dependencies": {
     "next": "^15.3.2",
@@ -22,6 +52,18 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
     "tailwindcss": "^4",
-    "typescript": "^5"
-  }
+    "typescript": "^5",
+    "prettier": "^3.0.0",
+    "cross-env": "^7.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
 }
